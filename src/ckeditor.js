@@ -9,8 +9,6 @@ import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classicedi
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
-import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
-import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
@@ -29,15 +27,37 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+//ckeditor5-alignment
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';     // <--- ADDED
+
+// ckeditor5-basic-styles
+import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
+import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+
+//ckeditor5-font
+import Font from '@ckeditor/ckeditor5-font/src/font';
+
+//ckeditor5-page-break
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
+
+//ckeditor5-mention
+import Mention from '@ckeditor/ckeditor5-mention/src/mention';
+import MentionCustomization from '@ckeditor/ckeditor5-mention/src/mention';
+
+
+export default class DhtEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
-ClassicEditor.builtinPlugins = [
+DhtEditor.builtinPlugins = [
 	Essentials,
 	UploadAdapter,
 	Autoformat,
-	Bold,
-	Italic,
+
 	BlockQuote,
 	CKFinder,
 	EasyImage,
@@ -54,30 +74,64 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+
+	//ckeditor5-alignment
+	Alignment,
+
+	//ckeditor5-basic-styles
+	Bold,
+	Italic,
+	Underline,
+	Strikethrough,
+	Code,
+	Subscript,
+	Superscript,
+
+	//ckeditor5-font
+	Font,
+
+	//ckeditor5-page-break
+	PageBreak,
+
+	//ckeditor5-mention
+	Mention,
+	MentionCustomization
 ];
 
 // Editor configuration.
-ClassicEditor.defaultConfig = {
+DhtEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
 			'|',
+			'fontFamily',
+			'fontSize',
+			'|',
+			'fontColor',
+			'fontBackgroundColor',
+			'alignment',
+			'|',
 			'bold',
 			'italic',
-			'link',
+			'underline',
+			'|',
 			'bulletedList',
 			'numberedList',
+			'|',
+			'insertTable',
 			'|',
 			'indent',
 			'outdent',
 			'|',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
+			'pageBreak',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'strikethrough',
+			'subscript',
+			'superscript',
+			'link',
 		]
 	},
 	image: {
@@ -97,4 +151,17 @@ ClassicEditor.defaultConfig = {
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
+
+	, fontSize: {
+		options: [
+			9,
+			11,
+			13,
+			'default',
+			17,
+			19,
+			21
+		]
+	},
+
 };
