@@ -30,6 +30,8 @@
 				build</a> works fine.</p>
 	</div>
 
+	<button onclick="testInsertText('dunght');">test insert texxt</button>
+
 	<script src="../build/ckeditor.js"></script>
 	<script>
 		DhtEditor.create(document.querySelector('#editor'), {
@@ -42,6 +44,11 @@
 			.catch(error => {
 				console.error('There was a problem initializing the editor.', error);
 			});
+
+			function testInsertText(msg){
+				editor.execute( 'insertTextAtCursor', msg );
+			}
+
 	</script>
 
 </body>

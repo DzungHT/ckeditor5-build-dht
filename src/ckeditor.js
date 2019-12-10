@@ -49,6 +49,8 @@ import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention';
 import MentionCustomization from '@ckeditor/ckeditor5-mention/src/mention';
 
+//InsertDropdownItem
+import InsertTextAtCursor from './customPlugin/InsertTextAtCursor'
 
 export default class DhtEditor extends ClassicEditorBase { }
 
@@ -96,7 +98,10 @@ DhtEditor.builtinPlugins = [
 
 	//ckeditor5-mention
 	Mention,
-	MentionCustomization
+	MentionCustomization,
+
+	//InsertTextAtCursor
+	InsertTextAtCursor
 ];
 
 // Editor configuration.
@@ -132,6 +137,7 @@ DhtEditor.defaultConfig = {
 			'subscript',
 			'superscript',
 			'link',
+			'insertDropdownItem'
 		]
 	},
 	image: {

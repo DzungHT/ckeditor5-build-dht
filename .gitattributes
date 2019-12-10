@@ -1,8 +1,8 @@
 *			text=auto
 
-*.htaccess	eol=lf
-*.cgi		eol=lf
-*.sh		eol=lf
+*.htaccess	eol=crlf
+*.cgi		eol=crlf
+*.sh		eol=crlf
 
 *.css		text
 *.htm		text
