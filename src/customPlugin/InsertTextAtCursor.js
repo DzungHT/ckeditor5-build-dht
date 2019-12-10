@@ -6,8 +6,8 @@ import Command from '@ckeditor/ckeditor5-core/src/command'
 
 class InsertTextAtCursorCommand extends Command {
     execute( message ) {
-        editor.model.change( writer => {
-            editor.model.insertContent( writer.createText( message ) );
+        this.editor.model.change( writer => {
+            this.editor.model.insertContent( writer.createText( message ) );
         } );
     }
 }
