@@ -137,7 +137,6 @@ DhtEditor.defaultConfig = {
 			'subscript',
 			'superscript',
 			'link',
-			'insertDropdownItem'
 		]
 	},
 	image: {
