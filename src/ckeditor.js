@@ -26,10 +26,8 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-
-//ckeditor5-alignment
+// ckeditor5-alignment
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';     // <--- ADDED
-
 // ckeditor5-basic-styles
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -39,10 +37,10 @@ import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 
-//ckeditor5-font
+// ckeditor5-font
 import Font from '@ckeditor/ckeditor5-font/src/font';
 
-//ckeditor5-page-break
+// ckeditor5-page-break
 import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
 
 //ckeditor5-mention
@@ -53,6 +51,8 @@ import MentionCustomization from '@ckeditor/ckeditor5-mention/src/mention';
 import InsertTextAtCursor from './customPlugin/InsertTextAtCursor'
 import DownloadWord from './customPlugin/DownloadWord';
 import CustomToolbar from './customPlugin/CustomToolbar';
+
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
 
 export default class DhtEditor extends ClassicEditorBase { }
 
@@ -106,6 +106,8 @@ DhtEditor.builtinPlugins = [
 	InsertTextAtCursor,
 	DownloadWord,
 	CustomToolbar,
+
+	CodeBlock
 ];
 
 // Editor configuration.
@@ -120,6 +122,7 @@ DhtEditor.defaultConfig = {
 			'fontColor',
 			'fontBackgroundColor',
 			'alignment',
+			'codeBlock',
 			'|',
 			'bold',
 			'italic',
@@ -141,6 +144,7 @@ DhtEditor.defaultConfig = {
 			'subscript',
 			'superscript',
 			'link',
+
 
 		]
 	},
